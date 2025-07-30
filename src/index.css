@@ -1,0 +1,185 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* App Vault Design System - Beautiful gradients, colors, and animations */
+
+@layer base {
+  :root {
+    /* Core Theme Colors */
+    --background: 220 25% 4%;
+    --foreground: 220 15% 95%;
+    
+    --card: 220 25% 6%;
+    --card-foreground: 220 15% 95%;
+    
+    --popover: 220 25% 6%;
+    --popover-foreground: 220 15% 95%;
+    
+    /* Brand Colors - Purple/Blue Gradient Theme */
+    --primary: 262 83% 58%;
+    --primary-foreground: 220 15% 95%;
+    --primary-glow: 270 91% 65%;
+    
+    --secondary: 220 25% 12%;
+    --secondary-foreground: 220 15% 85%;
+    
+    --muted: 220 25% 8%;
+    --muted-foreground: 220 15% 65%;
+    
+    --accent: 262 83% 58%;
+    --accent-foreground: 220 15% 95%;
+    
+    --destructive: 0 75% 60%;
+    --destructive-foreground: 220 15% 95%;
+    
+    --border: 220 25% 12%;
+    --input: 220 25% 10%;
+    --ring: 262 83% 58%;
+    
+    --success: 142 76% 36%;
+    --warning: 38 92% 50%;
+    --info: 199 89% 48%;
+    
+    --radius: 0.75rem;
+    
+    /* Beautiful Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-glow)));
+    --gradient-secondary: linear-gradient(135deg, hsl(var(--secondary)), hsl(var(--muted)));
+    --gradient-accent: linear-gradient(45deg, hsl(var(--accent)), hsl(262 90% 70%));
+    --gradient-glow: linear-gradient(135deg, hsl(var(--primary) / 0.2), hsl(var(--primary-glow) / 0.1));
+    --gradient-card: linear-gradient(135deg, hsl(var(--card)), hsl(220 25% 8%));
+    
+    /* Shadows with Color */
+    --shadow-primary: 0 10px 30px -10px hsl(var(--primary) / 0.3);
+    --shadow-glow: 0 0 40px hsl(var(--primary-glow) / 0.4);
+    --shadow-card: 0 8px 32px hsl(220 25% 2% / 0.4);
+    
+    /* Animations */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-spring: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  
+  body {
+    @apply bg-background text-foreground antialiased;
+    background: radial-gradient(ellipse at top, hsl(var(--primary) / 0.1), transparent 50%),
+                radial-gradient(ellipse at bottom, hsl(var(--primary-glow) / 0.05), transparent 50%);
+    min-height: 100vh;
+  }
+  
+  /* Scrollbar Styling */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    @apply bg-muted/20;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: var(--gradient-primary);
+    border-radius: 4px;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--gradient-accent);
+  }
+}
+
+@layer components {
+  /* Gradient Backgrounds */
+  .gradient-primary {
+    background: var(--gradient-primary);
+  }
+  
+  .gradient-secondary {
+    background: var(--gradient-secondary);
+  }
+  
+  .gradient-accent {
+    background: var(--gradient-accent);
+  }
+  
+  .gradient-glow {
+    background: var(--gradient-glow);
+  }
+  
+  .gradient-card {
+    background: var(--gradient-card);
+  }
+  
+  /* Glass Effect */
+  .glass {
+    background: hsl(var(--card) / 0.8);
+    backdrop-filter: blur(16px);
+    border: 1px solid hsl(var(--border) / 0.5);
+  }
+  
+  /* Glow Effects */
+  .glow-primary {
+    box-shadow: var(--shadow-primary);
+  }
+  
+  .glow-card {
+    box-shadow: var(--shadow-card);
+  }
+  
+  /* Hover Animations */
+  .hover-scale {
+    transition: var(--transition-smooth);
+  }
+  
+  .hover-scale:hover {
+    transform: scale(1.02);
+  }
+  
+  .hover-glow {
+    transition: var(--transition-smooth);
+  }
+  
+  .hover-glow:hover {
+    box-shadow: var(--shadow-glow);
+  }
+  
+  /* Button Variants */
+  .btn-gradient {
+    background: var(--gradient-primary);
+    color: hsl(var(--primary-foreground));
+    border: none;
+    transition: var(--transition-smooth);
+  }
+  
+  .btn-gradient:hover {
+    background: var(--gradient-accent);
+    box-shadow: var(--shadow-glow);
+    transform: translateY(-2px);
+  }
+  
+  .btn-glass {
+    background: hsl(var(--card) / 0.6);
+    backdrop-filter: blur(16px);
+    border: 1px solid hsl(var(--border) / 0.3);
+    transition: var(--transition-smooth);
+  }
+  
+  .btn-glass:hover {
+    background: hsl(var(--card) / 0.8);
+    border-color: hsl(var(--primary) / 0.5);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
