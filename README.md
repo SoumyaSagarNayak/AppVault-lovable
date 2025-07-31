@@ -30,7 +30,7 @@ I love exploring new AI tools like Lovable, not just to build fast, but to **und
 Clone the project and install dependencies:
 
 ```bash
-git clone [<your-repo-url>](https://github.com/SoumyaSagarNayak/AppVault-lovable.git)
+git clone https://github.com/SoumyaSagarNayak/AppVault-lovable.git
 cd app-vault
 npm install
 npm run dev
