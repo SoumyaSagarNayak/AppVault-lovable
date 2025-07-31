@@ -34,7 +34,7 @@ git clone https://github.com/SoumyaSagarNayak/AppVault-lovable.git
 cd app-vault
 npm install
 npm run dev
-
+```
 
 
 
